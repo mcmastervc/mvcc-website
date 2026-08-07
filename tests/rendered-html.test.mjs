@@ -32,10 +32,20 @@ function assertExternalLinksOpenInNewTabs(html) {
   }
 }
 
+function assertSecurityHeaders(response) {
+  assert.equal(response.headers.get("cross-origin-opener-policy"), "same-origin");
+  assert.equal(response.headers.get("permissions-policy"), "camera=(), geolocation=(), microphone=()");
+  assert.equal(response.headers.get("referrer-policy"), "strict-origin-when-cross-origin");
+  assert.equal(response.headers.get("x-content-type-options"), "nosniff");
+  assert.equal(response.headers.get("x-frame-options"), "SAMEORIGIN");
+  assert.equal(response.headers.has("x-powered-by"), false);
+}
+
 test("renders the SEO-ready homepage", async () => {
   const response = await request("/");
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
+  assertSecurityHeaders(response);
 
   const html = await response.text();
   assert.match(html, developmentPreviewMeta);
@@ -56,6 +66,7 @@ test("renders the SEO-ready homepage", async () => {
 test("renders the executive-team page", async () => {
   const response = await request("/team");
   assert.equal(response.status, 200);
+  assertSecurityHeaders(response);
   const html = await response.text();
   assert.match(html, /<title>Executive Team \| MVCC<\/title>/i);
   assert.match(html, /rel="canonical" href="https:\/\/mcmastervcc\.com\/team"/i);
