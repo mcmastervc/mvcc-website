@@ -1,0 +1,690 @@
+<!doctype html>
+<!-- MVCC BUILD: CONVERGENCE-V2.8 / BAKED-VECTOR-WORDMARK / CRISP-SETTLE / CONTRACTING-ANCHORS / LOW-POWER-FALLBACK / 17S -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MVCC Conviction Line — convergence v2 Wix hero</title>
+  <style>
+    :root {
+      --mvcc-ink: #171217;
+      --mvcc-paper: #ffffff;
+      --mvcc-duration: 17s;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body,
+    #mvcc-conviction-line {
+      width: 100%;
+      height: 100%;
+      min-height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: transparent;
+    }
+
+    body {
+      pointer-events: none;
+    }
+
+    #mvcc-conviction-line {
+      position: relative;
+      isolation: isolate;
+      contain: strict;
+      background:
+        radial-gradient(ellipse at 77% 47%, rgba(122, 0, 0, 0.16) 0%, rgba(122, 0, 0, 0.065) 31%, transparent 58%),
+        radial-gradient(ellipse at 87% 25%, rgba(212, 175, 55, 0.055) 0%, transparent 32%),
+        linear-gradient(128deg, #ffffff 0%, #fbfaf7 52%, #ffffff 100%);
+    }
+
+    #mvcc-conviction-line::before,
+    #mvcc-conviction-line::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+    }
+
+    #mvcc-conviction-line::before {
+      background:
+        linear-gradient(112deg, transparent 48%, rgba(212, 175, 55, 0.045) 59%, transparent 71%),
+        repeating-linear-gradient(116deg, rgba(23, 18, 23, 0.018) 0 1px, transparent 1px 9px);
+      mix-blend-mode: multiply;
+      opacity: 0.74;
+    }
+
+    #mvcc-conviction-line::after {
+      opacity: 0.12;
+      background-image:
+        radial-gradient(circle, rgba(23, 18, 23, 0.32) 0 0.5px, transparent 0.75px),
+        radial-gradient(circle, rgba(122, 0, 0, 0.32) 0 0.5px, transparent 0.75px);
+      background-position: 0 0, 3px 2px;
+      background-size: 5px 5px, 7px 7px;
+      mix-blend-mode: multiply;
+    }
+
+    .mvcc-art {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      display: block;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+      opacity: 0;
+      transition: opacity 180ms ease;
+    }
+
+    .layout-ready .mvcc-art {
+      opacity: 1;
+    }
+
+    .field-contours path,
+    .feeder,
+    .material-path,
+    .construction-axis,
+    .construction-guide,
+    .echo-flash {
+      fill: none;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .field-contours path {
+      stroke: rgba(23, 18, 23, 0.14);
+      stroke-width: 1;
+      opacity: 0;
+    }
+
+    .feeder,
+    .material-path,
+    .tension-path,
+    .echo-flash {
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .feeder-red {
+      stroke: #7A0000;
+      stroke-width: 2.3;
+    }
+
+    .feeder-gold {
+      stroke: #D4AF37;
+      stroke-width: 2.15;
+    }
+
+    .material-path {
+      fill: none;
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+      stroke-width: 2.3;
+      opacity: 0;
+      vector-effect: none;
+    }
+
+    .material-red {
+      stroke: #7A0000;
+    }
+
+    .material-gold {
+      stroke: #D4AF37;
+    }
+
+    .sparkle-field {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .sparkle {
+      position: absolute;
+      left: var(--spark-x);
+      top: var(--spark-y);
+      width: var(--spark-size);
+      height: var(--spark-size);
+      color: #7A0000;
+      background: currentColor;
+      opacity: var(--spark-opacity);
+      clip-path: polygon(50% 0%, 59% 41%, 100% 50%, 59% 59%, 50% 100%, 41% 59%, 0% 50%, 41% 41%);
+      transform: translate(-50%, -50%) rotate(var(--spark-rotation));
+      mix-blend-mode: multiply;
+    }
+
+    .sparkle.gold {
+      color: #D4AF37;
+    }
+
+    .construction-axis {
+      stroke: rgba(23, 18, 23, 0.17);
+      stroke-width: 1;
+      stroke-dasharray: 5 7;
+    }
+
+    .construction-guide {
+      stroke: rgba(212, 175, 55, 0.38);
+      stroke-width: 1.15;
+      stroke-dasharray: 7 6;
+    }
+
+    .anchor-halo {
+      fill: rgba(122, 0, 0, 0.24);
+    }
+
+    .anchor-halo.gold {
+      fill: rgba(212, 175, 55, 0.18);
+    }
+
+    .anchor-core {
+      fill: var(--mvcc-paper);
+      stroke: #7A0000;
+      stroke-width: 1.5;
+      vector-effect: non-scaling-stroke;
+    }
+
+    .anchor-core.gold {
+      stroke: #D4AF37;
+    }
+
+    .tension-path {
+      fill: none;
+      stroke-width: 2.3;
+      opacity: 0;
+      vector-effect: none;
+    }
+
+    .tension-red {
+      stroke: #7A0000;
+    }
+
+    .tension-gold {
+      stroke: #D4AF37;
+    }
+
+    .vector-wordmark {
+      fill: #7A0000;
+    }
+
+    .vector-wordmark path {
+      fill-opacity: 0;
+      shape-rendering: geometricPrecision;
+    }
+
+    .echo-flash {
+      stroke-width: 1.5;
+      opacity: 0;
+    }
+
+    .flash-red {
+      stroke: #7A0000;
+    }
+
+    .flash-gold {
+      stroke: #D4AF37;
+    }
+
+    .anchor {
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    .feed-one,
+    .anchor-one,
+    .material-one {
+      --feed-delay: 0s;
+    }
+
+    .feed-two,
+    .anchor-two,
+    .material-two {
+      --feed-delay: 0.22s;
+    }
+
+    .feed-three,
+    .anchor-three,
+    .material-three {
+      --feed-delay: 0.44s;
+    }
+
+    .feed-four,
+    .anchor-four,
+    .material-four {
+      --feed-delay: 0.66s;
+    }
+
+    .feed-five,
+    .anchor-five,
+    .material-five {
+      --feed-delay: 0.88s;
+    }
+
+    .is-playing .field-contours path {
+      animation: contour-breathe var(--mvcc-duration) ease both;
+    }
+
+    .is-playing .field-contours path:nth-child(2) {
+      animation-delay: 0.18s;
+    }
+
+    .is-playing .field-contours path:nth-child(3) {
+      animation-delay: 0.36s;
+    }
+
+    .is-playing .field-contours path:nth-child(4) {
+      animation-delay: 0.54s;
+    }
+
+    .is-playing .field-contours path:nth-child(5) {
+      animation-delay: 0.72s;
+    }
+
+    .is-playing .feeder,
+    .is-playing .material-path,
+    .is-playing .construction-axis,
+    .is-playing .construction-guide,
+    .is-playing .echo-flash {
+      stroke-dasharray: 1;
+      stroke-dashoffset: 1;
+    }
+
+    .is-playing .feeder {
+      animation: feeder-deliver var(--mvcc-duration) var(--feed-delay, 0s) cubic-bezier(0.53, 0.06, 0.22, 1) both;
+    }
+
+    .is-playing .material-path {
+      animation: material-transfer var(--mvcc-duration) var(--feed-delay, 0s) cubic-bezier(0.53, 0.06, 0.22, 1) both;
+    }
+
+    .is-playing .construction-axis {
+      animation: axis-arrive var(--mvcc-duration) ease both;
+    }
+
+    .is-playing .axis-two {
+      animation-delay: 0.22s;
+    }
+
+    .is-playing .axis-three {
+      animation-delay: 0.66s;
+    }
+
+    .is-playing .construction-guide {
+      animation: guide-arrive var(--mvcc-duration) ease both;
+    }
+
+    .is-playing .guide-one {
+      animation-delay: 0.22s;
+    }
+
+    .is-playing .guide-two {
+      animation-delay: 0s;
+    }
+
+    .is-playing .guide-three {
+      animation-delay: 0.66s;
+    }
+
+    .is-playing .anchor {
+      animation: anchor-receive var(--mvcc-duration) var(--feed-delay, 0s) cubic-bezier(0.5, 0, 0.22, 1) both;
+    }
+
+    .is-playing .tension-path {
+      animation: tension-lock var(--mvcc-duration) cubic-bezier(0.58, 0, 0.2, 1) both;
+    }
+
+    .is-playing .vector-wordmark path {
+      animation: word-lock 2.55s 9.93s ease both;
+    }
+
+    .is-playing.wordmark-settled .vector-wordmark path {
+      animation: none;
+      fill-opacity: 1;
+    }
+
+    .is-playing .echo-flash {
+      animation: resolved-flash var(--mvcc-duration) 0.4s ease both;
+    }
+
+    @keyframes contour-breathe {
+      0% { opacity: 0; transform: translateX(12px); }
+      12%, 38% { opacity: 0.42; transform: translateX(0); }
+      61%, 100% { opacity: 0.1; transform: translateX(-4px); }
+    }
+
+    @keyframes feeder-deliver {
+      0% { stroke-dashoffset: 1; opacity: 0; }
+      4% { opacity: 0.9; }
+      27% { stroke-dashoffset: 0; opacity: 1; }
+      39%, 100% { stroke-dashoffset: -1; opacity: 0; }
+    }
+
+    @keyframes material-transfer {
+      0%, 26.9% { stroke-dashoffset: 1; stroke-width: 2.3; opacity: 0; }
+      27% { stroke-dashoffset: 1; stroke-width: 2.3; opacity: 1; }
+      39%, 45% { stroke-dashoffset: 0; stroke-width: 2.3; opacity: 1; }
+      51%, 100% { stroke-dashoffset: 0; stroke-width: 5; opacity: 0; }
+    }
+
+    @keyframes axis-arrive {
+      0%, 26.9% { stroke-dashoffset: 1; opacity: 0; }
+      29% { opacity: 0.46; }
+      39% { stroke-dashoffset: 0; opacity: 0.34; }
+      49%, 100% { opacity: 0; }
+    }
+
+    @keyframes guide-arrive {
+      0%, 26.9% { stroke-dashoffset: 1; opacity: 0; }
+      29% { opacity: 0.74; }
+      39% { stroke-dashoffset: 0; opacity: 0.62; }
+      49%, 100% { opacity: 0; }
+    }
+
+    @keyframes anchor-receive {
+      0%, 4% { opacity: 0; transform: scale(0.42); }
+      12% { opacity: 0.22; transform: scale(0.58); }
+      20% { opacity: 0.56; transform: scale(0.82); }
+      27% { opacity: 1; transform: scale(1.34); }
+      32%, 39% { opacity: 1; transform: scale(1); }
+      45% { opacity: 1; transform: scale(0.55); }
+      49%, 100% { opacity: 0; transform: scale(0.06); }
+    }
+
+    @keyframes tension-lock {
+      0%, 44.2% { stroke-width: 2.3; opacity: 0; }
+      45% { stroke-width: 2.3; opacity: 1; }
+      56%, 100% { stroke-width: 15; opacity: 1; }
+    }
+
+    @keyframes word-lock {
+      from { fill-opacity: 0; }
+      to { fill-opacity: 1; }
+    }
+
+    @keyframes resolved-flash {
+      0%, 51% { stroke-dashoffset: 1; opacity: 0; }
+      56% { opacity: 0.5; }
+      64% { stroke-dashoffset: 0; opacity: 0.09; }
+      71%, 100% { opacity: 0; }
+    }
+
+    .is-reduced .organic-phase,
+    .is-reduced .material-phase,
+    .is-reduced .construction-phase,
+    .is-reduced .anchor-phase,
+    .is-reduced .final-echo {
+      display: none;
+    }
+
+    .is-reduced .field-contours path {
+      opacity: 0.1;
+    }
+
+    .is-reduced .tension-path {
+      stroke-dashoffset: 0;
+      stroke-width: 15;
+      opacity: 1;
+    }
+
+    .is-reduced .tension-outer {
+      d: path("M796 566 C851.33 478.67 906.67 391.33 962 304 C1023.33 391.33 1084.67 478.67 1146 566");
+    }
+
+    .is-reduced .tension-inner {
+      d: path("M796 566 C848 566 900 566 952 566 C978.047743 530.822121 1004.095485 495.644242 1030.143228 460.466362");
+    }
+
+    .is-reduced .tension-gold {
+      d: path("M1072.989047 402.602421 C1097.326032 369.734947 1121.663016 336.867474 1146 304 C1210.667 391.333 1275.333 478.667 1340 566");
+    }
+
+    .is-reduced .vector-wordmark path {
+      fill-opacity: 1;
+    }
+
+    .is-low-power .feeder {
+      filter: none;
+    }
+
+    @media (max-width: 700px), (update: slow), (prefers-reduced-motion: reduce) {
+      .feeder {
+        filter: none;
+      }
+    }
+
+    .screen-reader-copy {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <div id="mvcc-conviction-line" data-build="convergence-v2-8-baked-vector-wordmark-crisp-settle-contracting-anchors-17s">
+    <div class="sparkle-field" aria-hidden="true"></div>
+    <svg id="mvcc-art" class="mvcc-art" viewBox="0 0 1440 720" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <defs>
+        <filter id="thread-waver" x="-12%" y="-12%" width="124%" height="124%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.008 0.022" numOctaves="1" seed="11" result="noise"></feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="2.6" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+        </filter>
+      </defs>
+
+      <g id="mvcc-scene">
+        <g class="field-contours">
+          <path d="M1350 654 C1269 629 1227 573 1158 588 C1088 603 1044 556 978 568 C914 581 867 542 821 506"></path>
+          <path d="M1348 613 C1276 588 1245 539 1178 552 C1114 565 1074 519 1017 532 C957 545 921 502 870 469"></path>
+          <path d="M1350 695 C1266 678 1209 634 1138 648 C1063 663 1017 618 950 631 C886 643 827 607 783 568"></path>
+          <path d="M1347 566 C1291 545 1259 503 1206 513 C1152 524 1113 487 1066 496"></path>
+          <path d="M1325 518 C1279 503 1248 468 1205 475 C1164 482 1132 457 1097 460"></path>
+        </g>
+
+        <g class="organic-phase">
+          <path class="feeder feeder-red feed-one" pathLength="1" filter="url(#thread-waver)" d="M1392 694 C1324 671 1262 704 1202 658 C1149 617 1092 650 1040 627 C982 601 925 628 869 604 C832 589 811 578 796 566"></path>
+          <path class="feeder feeder-red feed-two" pathLength="1" filter="url(#thread-waver)" d="M1278 82 C1224 100 1201 154 1158 177 C1113 201 1080 171 1040 198 C996 227 981 270 962 304"></path>
+          <path class="feeder feeder-red feed-three" pathLength="1" filter="url(#thread-waver)" d="M1418 362 C1354 348 1324 389 1290 421 C1255 454 1211 441 1183 480 C1158 516 1165 546 1146 566"></path>
+          <path class="feeder feeder-gold feed-four" pathLength="1" filter="url(#thread-waver)" d="M1378 128 C1325 147 1306 202 1260 222 C1214 242 1180 216 1158 253 C1146 273 1148 289 1146 304"></path>
+          <path class="feeder feeder-gold feed-five" pathLength="1" filter="url(#thread-waver)" d="M1124 720 C1088 676 1111 633 1154 626 C1198 619 1221 649 1257 639 C1297 628 1310 592 1340 566"></path>
+        </g>
+
+        <g class="construction-phase">
+          <path class="construction-axis axis-one" pathLength="1" d="M743 566 H1382"></path>
+          <path class="construction-axis axis-two" pathLength="1" d="M962 272 V656"></path>
+          <path class="construction-axis axis-three" pathLength="1" d="M1146 272 V656"></path>
+          <path class="construction-guide guide-one" pathLength="1" d="M796 566 L962 304 L1146 566"></path>
+          <path class="construction-guide guide-two" pathLength="1" d="M796 566 L952 566 L1030.143228 460.466362"></path>
+          <path class="construction-guide guide-three" pathLength="1" d="M1072.989047 402.602421 L1146 304 L1340 566"></path>
+        </g>
+
+        <g class="material-phase">
+          <path class="material-path material-red material-one" pathLength="1" fill="none" d="M796 566 L952 566 L1030.143228 460.466362"></path>
+          <path class="material-path material-red material-two" pathLength="1" fill="none" d="M962 304 L796 566"></path>
+          <path class="material-path material-red material-three" pathLength="1" fill="none" d="M1146 566 L962 304"></path>
+          <path class="material-path material-gold material-four" pathLength="1" fill="none" d="M1146 304 L1072.989047 402.602421"></path>
+          <path class="material-path material-gold material-five" pathLength="1" fill="none" d="M1340 566 L1146 304"></path>
+        </g>
+
+        <g class="anchor-phase">
+          <g class="anchor anchor-one">
+            <circle class="anchor-halo" cx="796" cy="566" r="22"></circle>
+            <circle class="anchor-core" cx="796" cy="566" r="4"></circle>
+          </g>
+          <g class="anchor anchor-two">
+            <circle class="anchor-halo" cx="962" cy="304" r="22"></circle>
+            <circle class="anchor-core" cx="962" cy="304" r="4"></circle>
+          </g>
+          <g class="anchor anchor-three">
+            <circle class="anchor-halo" cx="1146" cy="566" r="22"></circle>
+            <circle class="anchor-core" cx="1146" cy="566" r="4"></circle>
+          </g>
+          <g class="anchor anchor-four">
+            <circle class="anchor-halo gold" cx="1146" cy="304" r="22"></circle>
+            <circle class="anchor-core gold" cx="1146" cy="304" r="4"></circle>
+          </g>
+          <g class="anchor anchor-five">
+            <circle class="anchor-halo gold" cx="1340" cy="566" r="22"></circle>
+            <circle class="anchor-core gold" cx="1340" cy="566" r="4"></circle>
+          </g>
+        </g>
+
+        <g class="logo-vector">
+          <path class="tension-path tension-red tension-outer" pathLength="1" fill="none" d="M796 566 C851.33 478.67 906.67 391.33 962 304 C1023.33 391.33 1084.67 478.67 1146 566"></path>
+          <path class="tension-path tension-red tension-inner" pathLength="1" fill="none" d="M796 566 C848 566 900 566 952 566 C978.047743 530.822121 1004.095485 495.644242 1030.143228 460.466362"></path>
+          <path class="tension-path tension-gold" pathLength="1" fill="none" d="M1072.989047 402.602421 C1097.326032 369.734947 1121.663016 336.867474 1146 304 C1210.667 391.333 1275.333 478.667 1340 566"></path>
+          <g class="vector-wordmark" aria-label="MVCC">
+            <path d="M950.09 609.04 C953.9048 609.04 957.7196 609.04 961.65 609.04 C962.6389 610.7706 963.2763 612.0337 963.8813 613.8638 C964.7881 616.5304 965.7986 619.15 966.835 621.7688 C967.1578 622.5855 967.4805 623.4023 967.8032 624.2191 C967.9654 624.6296 968.1276 625.0402 968.2948 625.4631 C969.1118 627.5367 969.9198 629.6138 970.7238 631.6925 C970.8713 632.0714 971.0189 632.4502 971.171 632.8406 C971.3723 633.3623 971.3723 633.3623 971.5777 633.8945 C971.6964 634.2007 971.815 634.5069 971.9372 634.8224 C972.19 635.56 972.19 635.56 972.19 636.24 C972.4144 636.24 972.6388 636.24 972.87 636.24 C972.9108 635.8501 972.9108 635.8501 972.9523 635.4524 C973.3102 633.7131 973.9609 632.1299 974.6125 630.4813 C974.919 629.696 975.2254 628.9106 975.5316 628.1252 C975.6147 627.9127 975.6978 627.7003 975.7834 627.4814 C976.5049 625.6362 977.2146 623.7866 977.9222 621.9361 C978.1501 621.3406 978.3781 620.7451 978.606 620.1497 C978.9448 619.2646 979.2834 618.3795 979.6214 617.4942 C979.9405 616.6587 980.2607 615.8237 980.5811 614.9887 C980.7217 614.6193 980.7217 614.6193 980.8652 614.2425 C981.5448 612.4752 982.2983 610.7764 983.07 609.04 C986.997 609.04 990.924 609.04 994.97 609.04 C995.0524 610.0327 995.1348 611.0254 995.2197 612.0482 C995.5565 616.1034 995.8951 620.1584 996.2342 624.2134 C996.3268 625.3212 996.4191 626.4291 996.5115 627.537 C996.6837 629.6022 996.8571 631.6674 997.0313 633.7325 C997.0593 634.0658 997.0873 634.3992 997.1162 634.7426 C997.4638 638.8664 997.8492 642.9834 998.285 647.0987 C998.6355 650.4148 998.8226 653.6471 998.71 656.98 C997.2152 656.9884 995.7204 656.9946 994.2255 656.9987 C993.7166 657.0004 993.2077 657.0027 992.6988 657.0056 C991.9688 657.0098 991.2388 657.0117 990.5088 657.0132 C990.069 657.015 989.6293 657.0168 989.1761 657.0186 C988.17 656.98 988.17 656.98 987.83 656.64 C987.7309 655.6969 987.6518 654.7594 987.5856 653.8138 C987.5536 653.3839 987.5536 653.3839 987.5209 652.9453 C987.4525 652.0236 987.3861 651.1018 987.32 650.18 C987.2535 649.2679 987.1866 648.3558 987.1191 647.4438 C987.0771 646.8758 987.0358 646.3078 986.9953 645.7397 C986.8998 644.4319 986.7868 643.1301 986.6361 641.8275 C986.4703 640.384 986.3683 638.9429 986.288 637.4924 C986.2734 637.2402 986.2588 636.9879 986.2438 636.728 C986.198 635.935 986.1534 635.1419 986.1088 634.3487 C986.0776 633.8058 986.0464 633.2628 986.0151 632.7198 C985.9392 631.3999 985.8643 630.08 985.79 628.76 C985.0535 629.0323 985.0535 629.0323 984.8683 629.7366 C984.7938 630.0161 984.7193 630.2956 984.6425 630.5835 C984.5548 630.9016 984.4672 631.2196 984.3769 631.5473 C984.2822 631.8968 984.1875 632.2462 984.09 632.6063 C983.0738 636.2279 981.8773 639.7576 980.5902 643.2911 C979.585 646.0526 978.6299 648.8248 977.7429 651.6266 C977.1709 653.3947 976.4574 654.9954 975.59 656.64 C974.5907 656.6858 973.5936 656.7196 972.5938 656.7463 C972.3104 656.7605 972.0271 656.7747 971.7351 656.7894 C971.4623 656.7949 971.1895 656.8004 970.9084 656.806 C970.6573 656.8149 970.4063 656.8238 970.1476 656.833 C969.47 656.64 969.47 656.64 968.9376 655.9666 C968.3147 654.655 967.8355 653.3221 967.3702 651.9477 C967.2683 651.6516 967.1664 651.3554 967.0613 651.0503 C966.7285 650.081 966.3989 649.1106 966.07 648.14 C965.9582 647.8111 965.8465 647.4822 965.7313 647.1433 C964.7924 644.3784 963.8564 641.6125 962.9261 638.8447 C962.5751 637.8011 962.2223 636.7582 961.8691 635.7154 C961.7646 635.403 961.6601 635.0906 961.5525 634.7687 C960.8931 632.8272 960.1368 630.9582 959.27 629.1 C958.8807 630.7253 958.7999 632.3519 958.6976 634.0141 C958.6773 634.3286 958.6569 634.6431 958.636 634.9672 C958.5927 635.6391 958.5498 636.3111 958.5073 636.9831 C958.3971 638.7216 958.2822 640.4597 958.1677 642.198 C958.1453 642.5383 958.123 642.8785 958.0999 643.2291 C957.926 645.8727 957.7485 648.5158 957.5488 651.1575 C957.526 651.4833 957.5032 651.809 957.4798 652.1446 C957.4565 652.4421 957.4333 652.7396 957.4093 653.0461 C957.3816 653.4155 957.3816 653.4155 957.3534 653.7923 C957.1879 654.8755 956.851 655.9264 956.55 656.98 C953.0718 656.98 949.5936 656.98 946.01 656.98 C946.01 654.8626 946.0358 652.9133 946.2863 650.8388 C946.6192 647.914 946.8945 644.9848 947.1588 642.0532 C947.1915 641.693 947.1915 641.693 947.2248 641.3255 C947.787 635.1153 948.3135 628.9021 948.8404 622.6889 C948.9743 621.111 949.1084 619.5332 949.243 617.9554 C949.3045 617.2328 949.3656 616.5102 949.4266 615.7876 C949.4641 615.3475 949.5017 614.9075 949.5403 614.4541 C949.5889 613.8809 949.5889 613.8809 949.6385 613.296 C949.7709 611.8755 949.9325 610.4579 950.09 609.04 Z"></path>
+            <path d="M1115.7763 608.2962 C1116.091 608.2997 1116.4057 608.3031 1116.73 608.3066 C1117.6235 608.3194 1118.5167 608.3387 1119.41 608.36 C1119.8031 608.3661 1120.1963 608.3723 1120.6013 608.3786 C1124.1304 608.5418 1128.8998 609.7616 1131.65 612.1 C1132.0829 613.2634 1131.9912 613.4571 1131.476 614.6872 C1131.2335 615.1586 1130.9868 615.6278 1130.7363 616.095 C1130.6164 616.3255 1130.4965 616.5561 1130.373 616.7936 C1130.131 617.259 1129.8876 617.7236 1129.6427 618.1875 C1129.0485 619.3234 1128.4802 620.4718 1127.91 621.62 C1126.4509 621.4317 1125.2669 620.8752 1123.9588 620.2388 C1121.9651 619.4531 1119.8841 619.5178 1117.7738 619.5163 C1117.4843 619.5121 1117.1948 619.5079 1116.8965 619.5036 C1112.7635 619.4942 1109.426 620.6314 1106.3399 623.4395 C1103.6273 626.3085 1102.4908 630.0996 1102.496 633.9853 C1102.6732 637.5216 1104.4069 640.8459 1106.9575 643.2738 C1110.4416 645.9983 1113.5912 646.5141 1117.9013 646.5675 C1118.281 646.5802 1118.6608 646.5929 1119.0521 646.606 C1121.5601 646.6322 1123.4167 646.2174 1125.6853 645.1406 C1126.4351 644.7932 1127.1042 644.5655 1127.91 644.4 C1128.5401 645.6008 1129.1608 646.8061 1129.78 648.0125 C1129.9584 648.3522 1130.1368 648.6918 1130.3205 649.0418 C1130.4893 649.3727 1130.658 649.7036 1130.8319 650.0445 C1130.9886 650.3472 1131.1452 650.6499 1131.3067 650.9618 C1131.6959 652.0027 1131.7123 652.8175 1131.65 653.92 C1126.6543 656.6989 1122.2971 657.7703 1116.5838 657.8088 C1116.1824 657.8122 1115.7811 657.8157 1115.3677 657.8193 C1108.548 657.7508 1102.4503 654.7407 1097.5278 650.1136 C1092.3994 644.6666 1090.282 638.527 1090.4798 631.1657 C1090.6147 628.0137 1091.4181 625.4161 1092.89 622.64 C1093.1162 622.2094 1093.1162 622.2094 1093.3469 621.7701 C1094.6094 619.5222 1096.1865 617.6737 1097.99 615.84 C1098.224 615.6016 1098.4581 615.3632 1098.6992 615.1175 C1103.3091 610.7304 1109.4377 608.2004 1115.7763 608.2962 Z"></path>
+            <path d="M1087.79 612.1 C1088.0689 612.707 1088.0689 612.707 1088.13 613.46 C1087.7887 614.3419 1087.7887 614.3419 1087.2587 615.33 C1087.0716 615.6859 1086.8845 616.0418 1086.6916 616.4084 C1086.4931 616.7819 1086.2946 617.1553 1086.09 617.54 C1085.7054 618.304 1085.3228 619.0689 1084.9425 619.835 C1084.645 620.43 1084.3475 621.025 1084.05 621.62 C1082.5247 621.3585 1081.218 620.8414 1079.8 620.2388 C1075.4024 618.5897 1069.8602 619.3884 1065.605 621.025 C1062.3691 623.0842 1060.5788 625.7116 1059.0813 629.2275 C1058.3969 633.6375 1058.9291 637.4447 1061.3457 641.2085 C1063.3685 643.9248 1066.041 645.8854 1069.43 646.44 C1070.9254 646.5741 1072.4128 646.6169 1073.9138 646.6313 C1074.2893 646.6363 1074.6649 646.6413 1075.0519 646.6465 C1077.8202 646.6117 1079.9549 646.0075 1082.3808 644.6956 C1083.03 644.4 1083.03 644.4 1084.05 644.4 C1084.2306 644.7857 1084.4111 645.1714 1084.5972 645.5688 C1084.8398 646.0858 1085.0824 646.6029 1085.325 647.12 C1085.4433 647.3729 1085.5617 647.6258 1085.6836 647.8863 C1086.3851 649.3802 1087.1088 650.8554 1087.8833 652.313 C1088.13 652.9 1088.13 652.9 1088.13 653.92 C1082.9435 656.5729 1078.4436 657.7712 1072.5963 657.83 C1072.1844 657.8363 1071.7726 657.8427 1071.3483 657.8492 C1064.6049 657.802 1058.3923 654.6905 1053.6255 650.0319 C1048.8748 645.1298 1046.4159 638.9197 1046.5132 632.1339 C1046.7521 625.4517 1049.8337 619.8092 1054.632 615.2237 C1062.9111 608.0469 1078.439 604.5736 1087.79 612.1 Z"></path>
+            <path d="M998.37 609.04 C1002.297 609.04 1006.224 609.04 1010.27 609.04 C1012.1635 612.827 1012.1635 612.827 1012.7138 614.48 C1013.5153 616.7945 1014.3812 619.0801 1015.2638 621.365 C1015.4092 621.742 1015.5547 622.1191 1015.7045 622.5075 C1016.1592 623.6852 1016.6145 624.8626 1017.07 626.04 C1022.17 639.2227 1022.17 639.2227 1022.17 640.32 C1022.3944 640.32 1022.6188 640.32 1022.85 640.32 C1022.893 640.0204 1022.936 639.7208 1022.9802 639.4121 C1023.1742 638.3654 1023.4442 637.4762 1023.8262 636.4857 C1023.9624 636.1293 1024.0987 635.7729 1024.2391 635.4057 C1024.3908 635.0148 1024.5425 634.624 1024.6988 634.2213 C1024.9455 633.5782 1025.1923 632.9352 1025.439 632.2921 C1025.7202 631.5601 1026.0023 630.8284 1026.2845 630.0968 C1027.0242 628.1775 1027.7579 626.2561 1028.4919 624.3347 C1029.5638 621.5298 1030.6357 618.725 1031.7099 615.921 C1031.8249 615.6203 1031.9399 615.3195 1032.0584 615.0097 C1032.8243 613.0118 1033.6152 611.0271 1034.41 609.04 C1038.4492 609.04 1042.4884 609.04 1046.65 609.04 C1046.4067 610.4995 1046.2596 611.3512 1045.6884 612.6193 C1045.5591 612.9107 1045.4298 613.2021 1045.2966 613.5023 C1045.1541 613.818 1045.0117 614.1336 1044.865 614.4588 C1044.5514 615.1673 1044.2384 615.876 1043.926 616.5851 C1043.7597 616.9621 1043.5935 617.339 1043.4222 617.7274 C1042.5437 619.7387 1041.6956 621.7627 1040.8488 623.7875 C1040.7579 624.0045 1040.667 624.2215 1040.5734 624.445 C1039.4177 627.2056 1038.2698 629.9695 1037.126 632.7351 C1036.6457 633.8963 1036.1654 635.0575 1035.685 636.2188 C1035.5655 636.5076 1035.446 636.7965 1035.3229 637.0942 C1032.5718 643.7426 1029.7568 650.3635 1026.93 656.98 C1025.5347 657.0293 1024.1396 657.0595 1022.7438 657.0863 C1022.1485 657.1076 1022.1485 657.1076 1021.5411 657.1294 C1021.1609 657.1349 1020.7807 657.1404 1020.389 657.146 C1019.8628 657.1594 1019.8628 657.1594 1019.3261 657.173 C1018.43 656.98 1018.43 656.98 1017.8605 656.2597 C1017.7118 655.9364 1017.5632 655.6131 1017.41 655.28 C1017.2468 654.9305 1017.0836 654.5809 1016.9154 654.2208 C1016.7464 653.8305 1016.5774 653.4402 1016.4033 653.0381 C1016.3106 652.8246 1016.218 652.6111 1016.1226 652.3911 C1015.9271 651.9399 1015.7323 651.4884 1015.538 651.0366 C1015.2472 650.3608 1014.9541 649.686 1014.6608 649.0113 C1013.767 646.9467 1012.9019 644.879 1012.1055 642.7744 C1011.4763 641.1127 1010.7789 639.501 1010.0319 637.8894 C1009.1734 636.0063 1008.389 634.0912 1007.5925 632.1813 C1007.4026 631.7271 1007.2127 631.273 1007.0227 630.8188 C1006.4042 629.3396 1005.7871 627.8598 1005.17 626.38 C1004.945 625.8406 1004.72 625.3011 1004.495 624.7617 C1003.599 622.6135 1002.7035 620.4651 1001.8087 618.3164 C1001.7063 618.0707 1001.604 617.825 1001.4986 617.5718 C1001.2997 617.0939 1001.101 616.6159 1000.9026 616.1378 C1000.4553 615.0605 1000.0038 613.9855 999.5441 612.9133 C999.388 612.5481 999.232 612.1828 999.0713 611.8065 C998.9349 611.4912 998.7986 611.176 998.6582 610.8511 C998.37 610.06 998.37 610.06 998.37 609.04 Z"></path>
+          </g>
+
+        </g>
+
+        <g class="final-echo">
+          <path class="echo-flash flash-red" pathLength="1" d="M796 566 C851.33 478.67 906.67 391.33 962 304 C1023.33 391.33 1084.67 478.67 1146 566"></path>
+          <path class="echo-flash flash-gold" pathLength="1" d="M1072.989047 402.602421 C1097.326032 369.734947 1121.663016 336.867474 1146 304 C1210.667 391.333 1275.333 478.667 1340 566"></path>
+        </g>
+
+      </g>
+    </svg>
+
+    <p class="screen-reader-copy">Five fine red and gold filaments arrive at synchronized structural anchor points. As each tail is absorbed, a matching logo segment grows by the same amount, resolving into the McMaster Venture Capital Club mark over seventy-two small red and gold sparkles.</p>
+  </div>
+
+  <script>
+    (() => {
+      const root = document.getElementById("mvcc-conviction-line");
+      const art = document.getElementById("mvcc-art");
+      const scene = document.getElementById("mvcc-scene");
+      const sparkleField = root.querySelector(".sparkle-field");
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const device = typeof navigator === "undefined" ? {} : navigator;
+      const connection = device.connection || device.mozConnection || device.webkitConnection;
+      const lowPowerDevice =
+        (Number(device.deviceMemory) > 0 && Number(device.deviceMemory) <= 4) ||
+        (Number(device.hardwareConcurrency) > 0 && Number(device.hardwareConcurrency) <= 4) ||
+        Boolean(connection && connection.saveData);
+      let layoutMode = null;
+      let layoutTimer = 0;
+      let animationStarted = false;
+      let layoutObserver = null;
+
+      if (lowPowerDevice) root.classList.add("is-low-power");
+
+      function buildSparkleField() {
+        const fragment = document.createDocumentFragment();
+        let seed = 72437;
+
+        function random() {
+          seed = (seed * 1664525 + 1013904223) >>> 0;
+          return seed / 4294967296;
+        }
+
+        for (let row = 0; row < 6; row += 1) {
+          for (let column = 0; column < 12; column += 1) {
+            const index = row * 12 + column;
+            const star = document.createElement("span");
+            const x = ((column + 0.14 + random() * 0.72) / 12) * 100;
+            const y = ((row + 0.14 + random() * 0.72) / 6) * 100;
+            const size = 3.6 + random() * 2.6;
+            const opacity = 0.5 + random() * 0.32;
+            const rotation = random() * 360;
+
+            star.className = `sparkle${index % 2 ? " gold" : ""}`;
+            star.style.setProperty("--spark-x", `${x.toFixed(3)}%`);
+            star.style.setProperty("--spark-y", `${y.toFixed(3)}%`);
+            star.style.setProperty("--spark-size", `${size.toFixed(2)}px`);
+            star.style.setProperty("--spark-opacity", opacity.toFixed(2));
+            star.style.setProperty("--spark-rotation", `${rotation.toFixed(2)}deg`);
+            fragment.appendChild(star);
+          }
+        }
+
+        sparkleField.appendChild(fragment);
+        sparkleField.dataset.count = "72";
+      }
+
+      function getStableMode(width) {
+        if (layoutMode === "mobile" && width > 760) return "desktop";
+        if (layoutMode === "desktop" && width < 640) return "mobile";
+        return layoutMode || (width < 700 ? "mobile" : "desktop");
+      }
+
+      function applyLayout() {
+        const width = Math.max(root.clientWidth, document.documentElement.clientWidth, window.innerWidth || 0);
+        const nextMode = getStableMode(width);
+        layoutMode = nextMode;
+        art.setAttribute("preserveAspectRatio", "xMidYMid meet");
+
+        if (nextMode === "mobile") {
+          art.setAttribute("viewBox", "650 0 780 960");
+          scene.setAttribute("transform", "translate(0 145)");
+        } else {
+          art.setAttribute("viewBox", "0 0 1440 720");
+          scene.setAttribute("transform", "translate(0 -100)");
+        }
+
+        root.dataset.layout = nextMode;
+      }
+
+      function finalizeLayout() {
+        applyLayout();
+        root.classList.add("layout-ready");
+        if (!animationStarted) {
+          animationStarted = true;
+          play();
+        }
+      }
+
+      function queueLayout() {
+        window.clearTimeout(layoutTimer);
+        layoutTimer = window.setTimeout(finalizeLayout, 280);
+      }
+
+      function play() {
+        root.classList.remove("is-playing", "is-reduced", "wordmark-settled");
+        void root.offsetWidth;
+        root.classList.add(reducedMotion.matches ? "is-reduced" : "is-playing");
+      }
+
+      art.addEventListener("animationend", (event) => {
+        if (event.animationName === "word-lock") {
+          root.classList.add("wordmark-settled");
+        }
+      });
+
+      if (typeof reducedMotion.addEventListener === "function") {
+        reducedMotion.addEventListener("change", play);
+      } else if (typeof reducedMotion.addListener === "function") {
+        reducedMotion.addListener(play);
+      }
+
+      window.addEventListener("resize", queueLayout, { passive: true });
+      window.addEventListener("load", queueLayout, { once: true });
+      if (window.visualViewport) {
+        window.visualViewport.addEventListener("resize", queueLayout, { passive: true });
+      }
+      if (typeof ResizeObserver === "function") {
+        layoutObserver = new ResizeObserver(queueLayout);
+        layoutObserver.observe(root);
+      }
+      window.addEventListener("message", (event) => {
+        if (event.data && event.data.type === "mvcc-hero" && event.data.action === "replay") play();
+      });
+
+      buildSparkleField();
+      queueLayout();
+    })();
+  </script>
+</body>
+</html>
