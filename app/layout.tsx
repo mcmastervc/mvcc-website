@@ -5,7 +5,7 @@ const description =
   "McMaster Venture Capital Club connects McMaster students, founders, and investors through hands-on venture capital experience, founder support, and industry partnerships.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://mcmastervc.com"),
+  metadataBase: new URL("https://mcmastervcc.com"),
   applicationName: "MVCC",
   category: "education",
   title: {
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    url: "https://mcmastervc.com",
+    url: "https://mcmastervcc.com",
     siteName: "McMaster Venture Capital Club",
     title: "McMaster Venture Capital Club | MVCC",
     description,

@@ -11,8 +11,8 @@ const organizationSchema = {
   alternateName: "MVCC",
   description:
     "A recognized McMaster University student organization connecting students, founders, and investors through hands-on venture capital experience.",
-  url: "https://mcmastervc.com",
-  logo: "https://mcmastervc.com/images/mvcc-logo.png",
+  url: "https://mcmastervcc.com",
+  logo: "https://mcmastervcc.com/images/mvcc-logo.png",
   email: "mvcc@mcmaster.ca",
   address: {
     "@type": "PostalAddress",

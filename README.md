@@ -3,7 +3,7 @@
 The official website for the McMaster Venture Capital Club (MVCC), built as a
 semantic, HTML-first React site for Cloudflare Workers.
 
-- Production domain: `https://mcmastervc.com`
+- Production domain: `https://mcmastervcc.com`
 - Contact: `mvcc@mcmaster.ca`
 - Brand colours: `#7A0000` (deep red), `#D4AF37` (gold), off-white, and restrained black
 
@@ -84,9 +84,9 @@ deploy every push to the production branch.
 4. Ensure the Cloudflare Worker name matches the `name` in the generated
    Wrangler configuration.
 5. After the first successful deployment, go to **Settings → Domains & Routes →
-   Add → Custom Domain** and attach `mcmastervc.com`.
+   Add → Custom Domain** and attach `mcmastervcc.com`.
 6. Add a proxied `www` DNS record and a redirect rule from
-   `www.mcmastervc.com` to `https://mcmastervc.com`.
+   `www.mcmastervcc.com` to `https://mcmastervcc.com`.
 
 Official references:
 
@@ -98,10 +98,10 @@ Official references:
 
 After the custom domain is active:
 
-1. Confirm that `https://mcmastervc.com`, `/team`, `/robots.txt`, and
+1. Confirm that `https://mcmastervcc.com`, `/team`, `/robots.txt`, and
    `/sitemap.xml` return successfully.
 2. Add the domain to Google Search Console and Bing Webmaster Tools.
-3. Submit `https://mcmastervc.com/sitemap.xml` in both services.
+3. Submit `https://mcmastervcc.com/sitemap.xml` in both services.
 4. Add their verification token to `app/layout.tsx` if DNS verification is not used.
 5. Update McMaster club directories and social profiles to link to the new domain.
 6. Keep the wording “McMaster Venture Capital Club” visible in the page title,

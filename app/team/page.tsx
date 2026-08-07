@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "MVCC Executive Team",
     description:
       "Meet the student leaders building McMaster's venture capital community.",
-    url: "https://mcmastervc.com/team",
+    url: "https://mcmastervcc.com/team",
   },
 };
 
