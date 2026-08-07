@@ -14,7 +14,7 @@ export function ContactForm() {
     const topic = String(form.get("topic") || "General inquiry").trim();
     const message = String(form.get("message") || "").trim();
 
-    const subject = `MVCC website inquiry — ${topic}`;
+    const subject = `MVCC website inquiry: ${topic}`;
     const body = [
       `Name: ${name}`,
       `Email: ${email}`,
@@ -24,7 +24,7 @@ export function ContactForm() {
       message,
     ].join("\n");
 
-    setStatus("Opening your email app…");
+    setStatus("Opening your email app...");
     window.location.href = `mailto:mvcc@mcmaster.ca?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
@@ -61,7 +61,7 @@ export function ContactForm() {
         <textarea name="message" rows={5} required />
       </label>
       <div className="form-submit-row">
-        <button className="button button-gold" type="submit">
+        <button className="button button-light" type="submit">
           Compose email <span aria-hidden="true">↗</span>
         </button>
         <p aria-live="polite">

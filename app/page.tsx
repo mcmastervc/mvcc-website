@@ -66,14 +66,13 @@ export default function Home() {
             <div className="section-intro section-intro-split">
               <div>
                 <p className="eyebrow">About MVCC</p>
-                <h2 id="about-title">Built for the venture journey.</h2>
+                <h2 id="about-title">Learn venture capital by doing.</h2>
               </div>
               <p className="section-lede">
-                McMaster Venture Capital Club gives students the knowledge,
-                experience, and network to explore venture capital. Through
-                hands-on investing, founder engagement, and industry-led
-                programming, we turn curiosity into insight and ideas into
-                opportunity.
+                McMaster Venture Capital Club helps students learn how venture
+                capital works and build the skills and connections to take part
+                in it. Members learn through startup research, conversations
+                with founders, and events with people working in the industry.
               </p>
             </div>
 
@@ -100,9 +99,8 @@ export default function Home() {
           <div className="site-shell bridge-layout">
             <p className="bridge-kicker">Venture starts with conviction.</p>
             <p>
-              We create the space for ambitious students, promising founders,
-              and experienced investors to learn from one another—and build
-              lasting connections across the McMaster ecosystem.
+              We bring students, founders, and investors together to learn from
+              each other and build stronger connections across McMaster.
             </p>
           </div>
         </section>
@@ -111,13 +109,13 @@ export default function Home() {
           <div className="site-shell">
             <div className="section-heading-row">
               <div>
-                <p className="eyebrow">The founding team</p>
+                <p className="eyebrow">Meet the founders</p>
                 <h2 id="founders-title">Started by students who saw the gap.</h2>
               </div>
               <div className="heading-side">
                 <p>
-                  MVCC was created to make the venture ecosystem more tangible,
-                  collaborative, and accessible across McMaster.
+                  MVCC was created to make venture capital easier to understand
+                  and more accessible to McMaster students.
                 </p>
                 <a className="text-link" href="/team">
                   Meet the full executive team <span aria-hidden="true">→</span>
@@ -136,10 +134,10 @@ export default function Home() {
           <div className="site-shell services-layout">
             <div className="services-heading">
               <p className="eyebrow">For founders</p>
-              <h2 id="services-title">Thoughtful support. Practical output.</h2>
+              <h2 id="services-title">Practical support for early-stage teams.</h2>
               <p className="section-lede">
-                Student-led projects shaped around the real questions early-stage
-                teams need to answer next.
+                Our student teams work on focused projects built around the
+                questions founders need to answer next.
               </p>
               <a className="button button-outline" href="#contact">Explore a project</a>
             </div>
@@ -165,15 +163,16 @@ export default function Home() {
             <div className="section-intro section-intro-split partners-intro">
               <div>
                 <p className="eyebrow">Our partnerships</p>
-                <h2 id="partners-title">Connected to the venture ecosystem.</h2>
+                <h2 id="partners-title">Connected to venture capital across Canada.</h2>
               </div>
               <div>
                 <p className="section-lede">
-                  Our relationships connect MVCC members with leading venture
-                  capital firms and investors across Canada and beyond—bringing
-                  industry insight, mentorship, and practical exposure closer to campus.
+                  Our partners connect MVCC members with venture capital firms
+                  and investors across Canada. Through these relationships,
+                  students gain mentorship, industry insight, and direct
+                  exposure to the people working in venture.
                 </p>
-                <p className="partner-note">Hover or focus to see the MVCC gold treatment.</p>
+                <p className="partner-note">Hover or focus to see each logo on an MVCC gold background.</p>
               </div>
             </div>
             <div className="partner-grid" role="list" aria-label="MVCC partner organizations">
@@ -204,7 +203,7 @@ export default function Home() {
         <section className="section contact-section" id="contact" aria-labelledby="contact-title">
           <div className="site-shell contact-layout">
             <div className="contact-copy">
-              <p className="eyebrow eyebrow-gold">Start a conversation</p>
+              <p className="eyebrow">Start a conversation</p>
               <h2 id="contact-title">Bring us the next question.</h2>
               <p>
                 Whether you are building, investing, recruiting, or exploring

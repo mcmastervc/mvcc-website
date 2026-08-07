@@ -1,11 +1,11 @@
 export const audiences = [
   {
     label: "01 · Founders",
-    title: "Build with sharper conviction.",
+    title: "Build with clearer direction.",
     description:
-      "Strengthen your story, strategy, and path to market with thoughtful student-led support.",
+      "Get practical feedback on your pitch, market, and next steps from a team of McMaster students.",
     points: [
-      "Pitch and investor-material feedback",
+      "Pitch deck and investor material feedback",
       "Market positioning and growth strategy",
       "Connections to talent, operators, and investors",
     ],
@@ -20,7 +20,7 @@ export const audiences = [
     points: [
       "Hands-on startup and investment experience",
       "Access to founders, investors, and industry events",
-      "Opportunities to build venture-ready skills",
+      "Practical research and investing skills",
     ],
     cta: "Join the community",
     href: "https://linktr.ee/macventurecapital",
@@ -32,8 +32,8 @@ export const audiences = [
       "Connect with promising founders and ambitious students across the McMaster ecosystem.",
     points: [
       "Early access to emerging startups",
-      "Curated events, workshops, and networking",
-      "A direct channel to future venture talent",
+      "Events, workshops, and networking",
+      "A direct connection to students interested in venture",
     ],
     cta: "Partner with MVCC",
     href: "/#contact",
@@ -47,6 +47,7 @@ export const founders = [
     image:
       "https://static.wixstatic.com/media/7505c5_44f084e099c1428fa41da0ba4c3033c1~mv2.jpeg/v1/fill/w_388,h_311,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/diya.jpeg",
     position: "center 34%",
+    bio: "Diya is a third-year Political Science student at McMaster University minoring in Business with a passion for venture capital, startups, and community building. Outside of co-founding MVCC, she's apart of Front Row Ventures and the Toronto Tech Week team, where she works to connect more students with Canada's startup ecosystem. She loves meeting people, hearing the stories behind what they're building, and making introductions that lead to new ideas, opportunities, and collaborations.",
   },
   {
     name: "Benicio Uhart",
@@ -54,6 +55,7 @@ export const founders = [
     image:
       "https://static.wixstatic.com/media/7505c5_a43d9c4c71464d2a8d122390ac6a1ec7~mv2.jpg/v1/fill/w_388,h_424,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Ben_edited%20(1)_edited.jpg",
     position: "center 25%",
+    bio: "Benicio is a third-year Statistics student at McMaster. He's worked in data and ai automation at Finni Health (YC W23), and risk modelling at at Kensa Logistics. He co-founded MVCC because he believes McMaster should be a name people know in VC. He built the club to get it there.",
   },
   {
     name: "Veer Sarin",
@@ -61,6 +63,7 @@ export const founders = [
     image:
       "https://static.wixstatic.com/media/7505c5_3f1b3b57af27449982cb3d3ffd3f0f2f~mv2.png/v1/fill/w_388,h_311,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Veer%20upscaled_edited.png",
     position: "center 30%",
+    bio: "Veer Sarin is a co-founder of MVCC, where he led external relations and partnerships - forming ties with mega-funds, high-growth startups, and alumni that helped grow the club to over 850 members. He serves a venture scount for a number of firms across North America, sat on the investment committee for the McMaster Student Seed Fund, and interned at an M&&A advisory firm. Veer has since transferred to Ivey's HBA program, where he continues to advise MVCC while serving as Founding GTM for Visceral AI, an early-stage AI inference optimization startup.",
   },
 ] as const;
 
@@ -100,22 +103,22 @@ export const services = [
     number: "01",
     title: "Operational support",
     description:
-      "Focused research and practical thinking to help founders turn an ambitious plan into an executable one.",
-    points: ["Market and competitor research", "Operating-model review", "Decision-ready synthesis"],
+      "Research that helps founders make clearer decisions and move projects forward.",
+    points: ["Market and competitor research", "Operations and process review", "Clear summaries and recommendations"],
   },
   {
     number: "02",
     title: "Go-to-market strategy",
     description:
-      "A sharper view of customers, positioning, and the routes that can move an early-stage company forward.",
-    points: ["Customer and segment mapping", "Positioning and narrative", "Growth-channel analysis"],
+      "Research on customers, competitors, and channels to help founders decide where to focus.",
+    points: ["Customer and segment mapping", "Positioning and messaging", "Sales and growth channel research"],
   },
   {
     number: "03",
     title: "Talent acquisition",
     description:
-      "Access to McMaster's multidisciplinary student community and support defining early team needs.",
-    points: ["Role and capability scoping", "Student-talent connections", "Campus ecosystem access"],
+      "Help defining early hiring needs and connecting with students across McMaster.",
+    points: ["Role and skill requirements", "Connections to McMaster students", "Introductions across campus"],
   },
 ] as const;
 

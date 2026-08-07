@@ -36,6 +36,9 @@ test("renders the SEO-ready homepage", async () => {
   assert.match(html, /application\/ld\+json/i);
   assert.match(html, /mailto:mvcc@mcmaster\.ca/i);
   assert.match(html, /\/animation\/conviction-line\.html/i);
+  assert.match(html, /Diya is a third-year Political Science student at McMaster University/i);
+  assert.match(html, /Read Diya Shah&#x27;s biography/i);
+  assert.doesNotMatch(html, /—/);
 });
 
 test("renders the executive-team page", async () => {
@@ -46,6 +49,8 @@ test("renders the executive-team page", async () => {
   assert.match(html, /rel="canonical" href="https:\/\/mcmastervc\.com\/team"/i);
   assert.match(html, /Nathan Fanti/i);
   assert.match(html, /Aneek Mukherjee/i);
+  assert.match(html, /Meet the founders\./i);
+  assert.doesNotMatch(html, /—/);
 });
 
 test("serves crawler directives and a sitemap", async () => {
