@@ -23,7 +23,13 @@ export function SiteFooter() {
           <div>
             <p className="footer-label">Connect</p>
             <a href="/#partners">Partnerships</a>
-            <a href="https://linktr.ee/macventurecapital">Community</a>
+            <a
+              href="https://linktr.ee/macventurecapital"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Community
+            </a>
             <a href="mailto:mvcc@mcmaster.ca">Email MVCC</a>
           </div>
         </nav>

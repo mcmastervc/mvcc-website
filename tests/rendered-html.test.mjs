@@ -23,6 +23,15 @@ async function request(path, accept = "text/html") {
   );
 }
 
+function assertExternalLinksOpenInNewTabs(html) {
+  const links = html.match(/<a\b[^>]*href="https?:\/\/[^>]*>/gi) ?? [];
+  assert.ok(links.length > 0, "expected at least one external link");
+  for (const link of links) {
+    assert.match(link, /target="_blank"/i);
+    assert.match(link, /rel="noopener noreferrer"/i);
+  }
+}
+
 test("renders the SEO-ready homepage", async () => {
   const response = await request("/");
   assert.equal(response.status, 200);
@@ -38,6 +47,9 @@ test("renders the SEO-ready homepage", async () => {
   assert.match(html, /\/animation\/conviction-line\.html/i);
   assert.match(html, /Diya is a third-year Political Science student at McMaster University/i);
   assert.match(html, /Read Diya Shah&#x27;s biography/i);
+  assert.match(html, /href="https:\/\/www\.linkedin\.com\/in\/diyashahc\/"/i);
+  assert.doesNotMatch(html, /Hover or focus to see each logo/i);
+  assertExternalLinksOpenInNewTabs(html);
   assert.doesNotMatch(html, /—/);
 });
 
@@ -49,7 +61,10 @@ test("renders the executive-team page", async () => {
   assert.match(html, /rel="canonical" href="https:\/\/mcmastervc\.com\/team"/i);
   assert.match(html, /Nathan Fanti/i);
   assert.match(html, /Aneek Mukherjee/i);
-  assert.match(html, /Meet the founders\./i);
+  assert.match(html, /href="https:\/\/www\.linkedin\.com\/in\/nathan-fanti\/"/i);
+  assert.doesNotMatch(html, /Meet the founders\./i);
+  assert.doesNotMatch(html, /Diya Shah/i);
+  assertExternalLinksOpenInNewTabs(html);
   assert.doesNotMatch(html, /—/);
 });
 

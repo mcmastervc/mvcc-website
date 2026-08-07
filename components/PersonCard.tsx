@@ -8,10 +8,11 @@ type PersonCardProps = {
   image: string;
   position?: string;
   bio?: string;
+  linkedin: string;
   index: number;
 };
 
-export function PersonCard({ name, role, image, position, bio, index }: PersonCardProps) {
+export function PersonCard({ name, role, image, position, bio, linkedin, index }: PersonCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const portrait = (
     <>
@@ -59,7 +60,19 @@ export function PersonCard({ name, role, image, position, bio, index }: PersonCa
       )}
       <div className="person-meta">
         <h3>{name}</h3>
-        <p>{role}</p>
+        <div className="person-meta-side">
+          <p>{role}</p>
+          <a
+            className="person-linkedin"
+            href={linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${name} on LinkedIn (opens in a new tab)`}
+            title={`${name} on LinkedIn`}
+          >
+            <span aria-hidden="true">in</span>
+          </a>
+        </div>
       </div>
     </article>
   );

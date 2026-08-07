@@ -86,7 +86,12 @@ export default function Home() {
                   <ul>
                     {audience.points.map((point) => <li key={point}>{point}</li>)}
                   </ul>
-                  <a href={audience.href}>
+                  <a
+                    href={audience.href}
+                    {...(audience.href.startsWith("http")
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : {})}
+                  >
                     {audience.cta} <span aria-hidden="true">→</span>
                   </a>
                 </article>
@@ -172,7 +177,6 @@ export default function Home() {
                   students gain mentorship, industry insight, and direct
                   exposure to the people working in venture.
                 </p>
-                <p className="partner-note">Hover or focus to see each logo on an MVCC gold background.</p>
               </div>
             </div>
             <div className="partner-grid" role="list" aria-label="MVCC partner organizations">

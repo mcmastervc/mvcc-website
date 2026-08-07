@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PersonCard } from "@/components/PersonCard";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
-import { executiveTeam, founders } from "@/lib/site-data";
+import { executiveTeam } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Executive Team",
@@ -52,20 +52,6 @@ export default function TeamPage() {
           </div>
         </section>
 
-        <section className="section team-founders" id="team-founders" aria-labelledby="team-founders-title">
-          <div className="site-shell">
-            <div className="roster-heading roster-heading-light">
-              <p className="eyebrow eyebrow-gold">Founding team</p>
-              <h2 id="team-founders-title">Meet the founders.</h2>
-            </div>
-            <div className="people-grid people-grid-founders people-grid-dark">
-              {founders.map((person, index) => (
-                <PersonCard key={person.name} {...person} index={index} />
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="team-cta" id="team-cta">
           <div className="site-shell team-cta-inner">
             <div>
@@ -73,7 +59,12 @@ export default function TeamPage() {
               <h2>Build the next chapter with us.</h2>
             </div>
             <div className="team-cta-actions">
-              <a className="button button-primary" href="https://linktr.ee/macventurecapital">
+              <a
+                className="button button-primary"
+                href="https://linktr.ee/macventurecapital"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 Join the community
               </a>
               {/* A full navigation intentionally avoids framework-specific RSC routing. */}
