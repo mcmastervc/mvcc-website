@@ -58,6 +58,10 @@ test("renders the SEO-ready homepage", async () => {
   assert.match(html, /Diya is a third-year Political Science student at McMaster University/i);
   assert.match(html, /Read Diya Shah&#x27;s biography/i);
   assert.match(html, /href="https:\/\/www\.linkedin\.com\/in\/diyashahc\/"/i);
+  assert.match(html, /src="\/images\/team\/diya\.jpeg"/i);
+  assert.match(html, /src="\/images\/team\/ben-upscaled\.webp"/i);
+  assert.match(html, /src="\/images\/team\/veer\.jpg"/i);
+  assert.doesNotMatch(html, /wixstatic\.com\/media\/[^\"]*(?:diya|ben_edited|veer)/i);
   assert.doesNotMatch(html, /Hover or focus to see each logo/i);
   assertExternalLinksOpenInNewTabs(html);
   assert.doesNotMatch(html, /—/);
@@ -73,6 +77,8 @@ test("renders the executive-team page", async () => {
   assert.match(html, /Nathan Fanti/i);
   assert.match(html, /Aneek Mukherjee/i);
   assert.match(html, /href="https:\/\/www\.linkedin\.com\/in\/nathan-fanti\/"/i);
+  assert.match(html, /src="\/images\/team\/josh\.jpg"/i);
+  assert.match(html, /src="\/images\/team\/daniel\.jpg"/i);
   assert.doesNotMatch(html, /Meet the founders\./i);
   assert.doesNotMatch(html, /Diya Shah/i);
   assertExternalLinksOpenInNewTabs(html);

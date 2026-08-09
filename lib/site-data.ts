@@ -44,17 +44,15 @@ export const founders = [
   {
     name: "Diya Shah",
     role: "Co-Founder",
-    image:
-      "https://static.wixstatic.com/media/7505c5_44f084e099c1428fa41da0ba4c3033c1~mv2.jpeg/v1/fill/w_388,h_311,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/diya.jpeg",
-    position: "center 34%",
+    image: "/images/team/diya.jpeg",
+    position: "52% center",
     linkedin: "https://www.linkedin.com/in/diyashahc/",
     bio: "Diya is a third-year Political Science student at McMaster University minoring in Business with a passion for venture capital, startups, and community building. Outside of co-founding MVCC, she's apart of Front Row Ventures and the Toronto Tech Week team, where she works to connect more students with Canada's startup ecosystem. She loves meeting people, hearing the stories behind what they're building, and making introductions that lead to new ideas, opportunities, and collaborations.",
   },
   {
     name: "Benicio Uhart",
     role: "Co-Founder",
-    image:
-      "https://static.wixstatic.com/media/7505c5_a43d9c4c71464d2a8d122390ac6a1ec7~mv2.jpg/v1/fill/w_388,h_424,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Ben_edited%20(1)_edited.jpg",
+    image: "/images/team/ben-upscaled.webp",
     position: "center 25%",
     linkedin: "https://www.linkedin.com/in/buhart/",
     bio: "Benicio is a third-year Statistics student at McMaster. He's worked in data and ai automation at Finni Health (YC W23), and risk modelling at at Kensa Logistics. He co-founded MVCC because he believes McMaster should be a name people know in VC. He built the club to get it there.",
@@ -62,9 +60,8 @@ export const founders = [
   {
     name: "Veer Sarin",
     role: "Co-Founder",
-    image:
-      "https://static.wixstatic.com/media/7505c5_3f1b3b57af27449982cb3d3ffd3f0f2f~mv2.png/v1/fill/w_388,h_311,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Veer%20upscaled_edited.png",
-    position: "center 30%",
+    image: "/images/team/veer.jpg",
+    position: "center center",
     linkedin: "https://www.linkedin.com/in/veersarin/",
     bio: "Veer Sarin is a co-founder of MVCC, where he led external relations and partnerships - forming ties with mega-funds, high-growth startups, and alumni that helped grow the club to over 850 members. He serves a venture scount for a number of firms across North America, sat on the investment committee for the McMaster Student Seed Fund, and interned at an M&&A advisory firm. Veer has since transferred to Ivey's HBA program, where he continues to advise MVCC while serving as Founding GTM for Visceral AI, an early-stage AI inference optimization startup.",
   },
@@ -82,16 +79,14 @@ export const executiveTeam = [
   {
     name: "Joshua Michell",
     role: "Operations Lead",
-    image:
-      "https://static.wixstatic.com/media/7505c5_1ce17787984f489aa73e682fbe07277d~mv2.jpg/v1/fill/w_386,h_417,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Josh.jpg",
+    image: "/images/team/josh.jpg",
     position: "center 24%",
     linkedin: "https://www.linkedin.com/in/joshua-michell/",
   },
   {
     name: "Daniel Watmough",
     role: "Lead Analyst",
-    image:
-      "https://static.wixstatic.com/media/7505c5_2532c2a0bb214329997e3748d3bcd495~mv2.jpg/v1/fill/w_386,h_417,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/Daniel.jpg",
+    image: "/images/team/daniel.jpg",
     position: "center 22%",
     linkedin: "https://www.linkedin.com/in/daniel-watmough/",
   },

@@ -16,7 +16,6 @@ export function PersonCard({ name, role, image, position, bio, linkedin, index }
   const [isFlipped, setIsFlipped] = useState(false);
   const portrait = (
     <>
-      {/* These public source images will be replaced by local originals when supplied. */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={image}
