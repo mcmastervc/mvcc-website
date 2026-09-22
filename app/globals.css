@@ -322,7 +322,7 @@ button { cursor: pointer; }
 .person-meta h3 { margin: 0; color: var(--red); font-size: 1.28rem; font-weight: 650; letter-spacing: -0.025em; }
 .person-meta p { margin: 0; color: var(--muted); font-size: 0.76rem; letter-spacing: 0.08em; text-transform: uppercase; }
 .person-meta-side { display: flex; align-items: center; justify-content: flex-end; gap: 11px; }
-.person-title { display: grid; justify-items: end; gap: 5px; text-align: right; }
+.person-title { display: grid; justify-items: start; gap: 5px; text-align: left; }
 .person-title span { color: var(--gold-deep); font-size: 0.66rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
 .person-linkedin {
   display: inline-grid;
@@ -521,7 +521,6 @@ button { cursor: pointer; }
   .person-flip { min-height: 500px; aspect-ratio: auto; }
   .person-meta { align-items: center; flex-direction: row; }
   .person-meta-side { width: auto; }
-  .person-title { justify-items: end; text-align: right; }
   .people-grid-single { grid-template-columns: 1fr; }
   .service-item { grid-template-columns: 42px 1fr; padding-block: 35px; }
   .partner-grid { grid-template-columns: 1fr; }
