@@ -116,6 +116,7 @@ export const executiveTeam = [
     role: "Legal / MSU Relations Exec",
     image: "/images/team/chris-xenos.webp",
     position: "center 22%",
+    linkedin: "https://www.linkedin.com/in/christopherxenos/",
   },
   {
     name: "Rhian Ramos",
