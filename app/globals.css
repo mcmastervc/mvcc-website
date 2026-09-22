@@ -312,15 +312,15 @@ button { cursor: pointer; }
   right: 0;
   bottom: 0;
   display: grid;
-  width: 48px;
-  height: 48px;
+  width: 32px;
+  height: 32px;
   place-items: center;
   color: white;
   background: var(--red);
   text-decoration: none;
   transition: background 0.2s ease, transform 0.2s ease;
 }
-.person-linkedin-badge svg { width: 36px; height: 36px; fill: currentColor; }
+.person-linkedin-badge svg { width: 24px; height: 24px; fill: currentColor; }
 .person-linkedin-badge:hover { background: var(--gold-deep); transform: translateY(-2px); }
 .person-meta { display: grid; grid-template-columns: minmax(0, 1fr) minmax(105px, 0.8fr); align-items: start; gap: 18px; padding-top: 19px; border-top: 1px solid transparent; }
 .person-meta h3 { margin: 0; color: var(--red); font-size: 1.28rem; font-weight: 650; line-height: 1.2; letter-spacing: -0.025em; }
