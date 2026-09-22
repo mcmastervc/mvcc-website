@@ -323,9 +323,9 @@ button { cursor: pointer; }
 .person-linkedin-badge svg { width: 19px; height: 19px; fill: currentColor; }
 .person-linkedin-badge:hover { background: var(--gold-deep); transform: translateY(-2px); }
 .person-meta { display: grid; grid-template-columns: minmax(0, 1fr) minmax(105px, 0.8fr); align-items: start; gap: 18px; padding-top: 19px; border-top: 1px solid transparent; }
-.person-meta h3 { margin: 0; color: var(--red); font-size: 1.28rem; font-weight: 650; letter-spacing: -0.025em; }
-.person-meta p { margin: 0; color: var(--muted); font-size: 0.76rem; letter-spacing: 0.08em; text-transform: uppercase; }
-.person-meta-side { display: flex; align-items: flex-start; justify-content: flex-start; }
+.person-meta h3 { margin: 0; color: var(--red); font-size: 1.28rem; font-weight: 650; line-height: 1.2; letter-spacing: -0.025em; }
+.person-meta p { margin: 0; color: var(--muted); font-size: 0.76rem; line-height: 1.45; letter-spacing: 0.08em; text-transform: uppercase; }
+.person-meta-side { display: flex; align-items: flex-start; justify-content: flex-end; padding-top: 3px; }
 .person-title { display: grid; justify-items: start; gap: 5px; text-align: left; }
 
 .services-section { color: var(--ink); background: var(--paper-deep); }
