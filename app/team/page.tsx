@@ -55,8 +55,8 @@ export default function TeamPage() {
                 <h3>Executive</h3>
               </div>
               <div className="people-grid people-grid-executive people-grid-single">
-                {executive.map((person, index) => (
-                  <PersonCard key={person.name} {...person} index={index} />
+                {executive.map((person) => (
+                  <PersonCard key={person.name} {...person} />
                 ))}
               </div>
             </div>
@@ -67,8 +67,8 @@ export default function TeamPage() {
                 <h3>Leadership</h3>
               </div>
               <div className="people-grid people-grid-executive">
-                {leadership.map((person, index) => (
-                  <PersonCard key={person.name} {...person} index={executive.length + index} />
+                {leadership.map((person) => (
+                  <PersonCard key={person.name} {...person} />
                 ))}
               </div>
             </div>
@@ -79,12 +79,8 @@ export default function TeamPage() {
                 <h3>Associates</h3>
               </div>
               <div className="people-grid people-grid-executive">
-                {associates.map((person, index) => (
-                  <PersonCard
-                    key={person.name}
-                    {...person}
-                    index={executive.length + leadership.length + index}
-                  />
+                {associates.map((person) => (
+                  <PersonCard key={person.name} {...person} />
                 ))}
               </div>
             </div>

@@ -61,6 +61,8 @@ test("renders the SEO-ready homepage", async () => {
   assert.match(html, /src="\/images\/team\/diya\.jpeg"/i);
   assert.match(html, /src="\/images\/team\/ben-upscaled\.webp"/i);
   assert.match(html, /src="\/images\/team\/veer\.jpg"/i);
+  assert.match(html, /class="person-linkedin-badge"/i);
+  assert.doesNotMatch(html, /class="person-index"/i);
   assert.doesNotMatch(html, /wixstatic\.com\/media\/[^\"]*(?:diya|ben_edited|veer)/i);
   assert.doesNotMatch(html, /Hover or focus to see each logo/i);
   assertExternalLinksOpenInNewTabs(html);
@@ -82,6 +84,8 @@ test("renders the team page by tier", async () => {
   assert.match(html, /href="https:\/\/www\.linkedin\.com\/in\/nathan-fanti\/"/i);
   assert.match(html, /src="\/images\/team\/josh-michell\.webp"/i);
   assert.match(html, /src="\/images\/team\/hamza-khokhawala\.webp"/i);
+  assert.match(html, /class="person-linkedin-badge"/i);
+  assert.doesNotMatch(html, /class="person-index"/i);
   assert.doesNotMatch(html, /Daniel Watmough/i);
   assert.doesNotMatch(html, /Meet the founders\./i);
   assert.doesNotMatch(html, /Diya Shah/i);

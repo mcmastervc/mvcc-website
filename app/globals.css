@@ -253,6 +253,7 @@ button { cursor: pointer; }
 .people-grid-founders { grid-template-columns: repeat(3, 1fr); margin-top: 72px; }
 .people-grid-executive { grid-template-columns: repeat(4, 1fr); margin-top: 70px; }
 .person-card { min-width: 0; }
+.person-media { position: relative; }
 .person-photo,
 .person-flip { position: relative; width: 100%; aspect-ratio: 0.85; }
 .person-photo { overflow: hidden; background: var(--red-soft); }
@@ -305,43 +306,27 @@ button { cursor: pointer; }
 }
 .person-flip-hint-back { margin-top: auto; color: white; background: rgba(255, 255, 255, 0.1); }
 .person-flip:focus-visible { outline-color: var(--red); outline-offset: 5px; }
-.person-index {
+.person-linkedin-badge {
   position: absolute;
+  z-index: 4;
   right: 0;
   bottom: 0;
-  min-width: 48px;
-  padding: 11px 12px;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
   color: white;
   background: var(--red);
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
-.person-meta { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding-top: 19px; border-top: 1px solid transparent; }
+.person-linkedin-badge svg { width: 19px; height: 19px; fill: currentColor; }
+.person-linkedin-badge:hover { background: var(--gold-deep); transform: translateY(-2px); }
+.person-meta { display: grid; grid-template-columns: minmax(0, 1fr) minmax(105px, 0.8fr); align-items: start; gap: 18px; padding-top: 19px; border-top: 1px solid transparent; }
 .person-meta h3 { margin: 0; color: var(--red); font-size: 1.28rem; font-weight: 650; letter-spacing: -0.025em; }
 .person-meta p { margin: 0; color: var(--muted); font-size: 0.76rem; letter-spacing: 0.08em; text-transform: uppercase; }
-.person-meta-side { display: flex; align-items: center; justify-content: flex-end; gap: 11px; }
+.person-meta-side { display: flex; align-items: flex-start; justify-content: flex-start; }
 .person-title { display: grid; justify-items: start; gap: 5px; text-align: left; }
-.person-linkedin {
-  display: inline-grid;
-  width: 30px;
-  height: 30px;
-  flex: 0 0 30px;
-  place-items: center;
-  border: 1px solid rgba(122, 0, 0, 0.24);
-  border-radius: 50%;
-  color: var(--red);
-  background: rgba(255, 255, 255, 0.58);
-  font-family: Arial, sans-serif;
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1;
-  text-decoration: none;
-  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
-}
-.person-linkedin:hover { color: white; border-color: var(--red); background: var(--red); transform: translateY(-2px); }
 
 .services-section { color: var(--ink); background: var(--paper-deep); }
 .services-layout { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: clamp(70px, 10vw, 150px); align-items: start; }
@@ -454,9 +439,7 @@ button { cursor: pointer; }
 
 @media (max-width: 1000px) {
   .people-grid-executive { grid-template-columns: repeat(2, 1fr); row-gap: 48px; }
-  .person-meta { align-items: flex-start; flex-direction: column; gap: 9px; }
-  .person-meta-side { width: 100%; justify-content: space-between; }
-  .person-title { justify-items: start; text-align: left; }
+  .person-meta { grid-template-columns: 1fr; gap: 8px; }
   .people-grid-single { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -518,8 +501,7 @@ button { cursor: pointer; }
   .people-grid-executive { grid-template-columns: 1fr; gap: 42px; }
   .person-photo { aspect-ratio: 0.94; }
   .person-flip { min-height: 500px; aspect-ratio: auto; }
-  .person-meta { align-items: center; flex-direction: row; }
-  .person-meta-side { width: auto; }
+  .person-meta { grid-template-columns: minmax(0, 1fr) minmax(105px, 0.8fr); gap: 18px; }
   .people-grid-single { grid-template-columns: 1fr; }
   .service-item { grid-template-columns: 42px 1fr; padding-block: 35px; }
   .partner-grid { grid-template-columns: 1fr; }

@@ -128,8 +128,8 @@ export default function Home() {
               </div>
             </div>
             <div className="people-grid people-grid-founders">
-              {founders.map((person, index) => (
-                <PersonCard key={person.name} {...person} index={index} />
+              {founders.map((person) => (
+                <PersonCard key={person.name} {...person} />
               ))}
             </div>
           </div>
