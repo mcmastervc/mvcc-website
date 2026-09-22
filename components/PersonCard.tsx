@@ -35,8 +35,8 @@ export function PersonCard({ name, role, image, position, bio, linkedin }: Perso
       aria-label={`${name} on LinkedIn (opens in a new tab)`}
       title={`${name} on LinkedIn`}
     >
-      <svg viewBox="0 0 24 24" aria-hidden="true">
-        <path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM2.81 9.98h4.34V22H2.81V9.98Zm6.92 0h4.16v1.64h.06c.58-1.1 1.99-2.26 4.1-2.26 4.39 0 5.2 2.89 5.2 6.65V22h-4.33v-5.31c0-1.27-.02-2.9-1.77-2.9-1.77 0-2.04 1.38-2.04 2.81V22H9.73V9.98Z" />
+      <svg viewBox="0 0 25 24" aria-hidden="true">
+        <path d="M4.25 1.5a2.75 2.75 0 1 1 0 5.5 2.75 2.75 0 0 1 0-5.5ZM2 9h4.5v13H2V9Zm7 0h4.3v1.8c1-1.45 2.6-2.25 4.5-2.25 3.7 0 5.7 2.35 5.7 6.8V22H19v-6.05c0-2.3-.8-3.55-2.55-3.55-1.9 0-2.95 1.3-2.95 3.85V22H9V9Z" />
       </svg>
     </a>
   ) : null;
