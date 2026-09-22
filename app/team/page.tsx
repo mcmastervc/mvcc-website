@@ -5,9 +5,9 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { executiveTeam } from "@/lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Executive Team",
+  title: "Team",
   description:
-    "Meet the founders and executive team leading McMaster Venture Capital Club at McMaster University in Hamilton, Ontario.",
+    "Meet the student team leading McMaster Venture Capital Club at McMaster University in Hamilton, Ontario.",
   alternates: { canonical: "/team" },
   openGraph: {
     title: "MVCC Executive Team",
@@ -18,6 +18,10 @@ export const metadata: Metadata = {
 };
 
 export default function TeamPage() {
+  const executive = executiveTeam.filter((person) => person.tier === "Executive");
+  const leadership = executiveTeam.filter((person) => person.tier === "Leadership");
+  const associates = executiveTeam.filter((person) => person.tier === "Associate");
+
   return (
     <>
       <a className="skip-link" href="#main-content">Skip to main content</a>
@@ -41,13 +45,48 @@ export default function TeamPage() {
         <section className="section team-roster" aria-labelledby="executive-title">
           <div className="site-shell">
             <div className="roster-heading">
-              <p className="eyebrow">2026 · Executive team</p>
+              <p className="eyebrow">2026 · Team</p>
               <h2 id="executive-title">The team building MVCC.</h2>
             </div>
-            <div className="people-grid people-grid-executive">
-              {executiveTeam.map((person, index) => (
-                <PersonCard key={person.name} {...person} index={index} />
-              ))}
+
+            <div className="team-tier">
+              <div className="team-tier-heading">
+                <span>01</span>
+                <h3>Executive</h3>
+              </div>
+              <div className="people-grid people-grid-executive people-grid-single">
+                {executive.map((person, index) => (
+                  <PersonCard key={person.name} {...person} index={index} />
+                ))}
+              </div>
+            </div>
+
+            <div className="team-tier">
+              <div className="team-tier-heading">
+                <span>02</span>
+                <h3>Leadership</h3>
+              </div>
+              <div className="people-grid people-grid-executive">
+                {leadership.map((person, index) => (
+                  <PersonCard key={person.name} {...person} index={executive.length + index} />
+                ))}
+              </div>
+            </div>
+
+            <div className="team-tier">
+              <div className="team-tier-heading">
+                <span>03</span>
+                <h3>Associates</h3>
+              </div>
+              <div className="people-grid people-grid-executive">
+                {associates.map((person, index) => (
+                  <PersonCard
+                    key={person.name}
+                    {...person}
+                    index={executive.length + leadership.length + index}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </section>

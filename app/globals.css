@@ -322,6 +322,8 @@ button { cursor: pointer; }
 .person-meta h3 { margin: 0; color: var(--red); font-size: 1.28rem; font-weight: 650; letter-spacing: -0.025em; }
 .person-meta p { margin: 0; color: var(--muted); font-size: 0.76rem; letter-spacing: 0.08em; text-transform: uppercase; }
 .person-meta-side { display: flex; align-items: center; justify-content: flex-end; gap: 11px; }
+.person-title { display: grid; justify-items: end; gap: 5px; text-align: right; }
+.person-title span { color: var(--gold-deep); font-size: 0.66rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; }
 .person-linkedin {
   display: inline-grid;
   width: 30px;
@@ -429,6 +431,14 @@ button { cursor: pointer; }
 .team-roster { background: var(--paper); }
 .roster-heading { display: grid; grid-template-columns: 0.65fr 1.35fr; gap: 55px; align-items: start; }
 .roster-heading h2 { font-size: clamp(3rem, 6vw, 5.4rem); }
+.team-tier { margin-top: 72px; }
+.team-tier + .team-tier { margin-top: 92px; }
+.team-tier-heading { display: flex; align-items: center; gap: 16px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.team-tier-heading span { color: var(--gold-deep); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; }
+.team-tier-heading h3 { margin: 0; color: var(--red); font-size: clamp(1.55rem, 2.5vw, 2.2rem); font-weight: 600; letter-spacing: -0.025em; }
+.team-tier .people-grid-executive { margin-top: 30px; }
+.people-grid-single { grid-template-columns: minmax(240px, 1fr) repeat(3, minmax(0, 1fr)); }
+.people-grid-single .person-card { grid-column: 1; }
 .team-cta { padding: 75px 0; background: var(--gold); }
 .team-cta-inner { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 60px; align-items: end; }
 .team-cta h2 { max-width: 650px; color: var(--ink); font-size: clamp(2.4rem, 4.5vw, 4.6rem); }
@@ -447,6 +457,8 @@ button { cursor: pointer; }
   .people-grid-executive { grid-template-columns: repeat(2, 1fr); row-gap: 48px; }
   .person-meta { align-items: flex-start; flex-direction: column; gap: 9px; }
   .person-meta-side { width: 100%; justify-content: space-between; }
+  .person-title { justify-items: start; text-align: left; }
+  .people-grid-single { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 900px) {
@@ -509,6 +521,8 @@ button { cursor: pointer; }
   .person-flip { min-height: 500px; aspect-ratio: auto; }
   .person-meta { align-items: center; flex-direction: row; }
   .person-meta-side { width: auto; }
+  .person-title { justify-items: end; text-align: right; }
+  .people-grid-single { grid-template-columns: 1fr; }
   .service-item { grid-template-columns: 42px 1fr; padding-block: 35px; }
   .partner-grid { grid-template-columns: 1fr; }
   .partner-card { min-height: 160px; }

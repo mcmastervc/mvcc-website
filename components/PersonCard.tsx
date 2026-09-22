@@ -5,14 +5,15 @@ import { useState } from "react";
 type PersonCardProps = {
   name: string;
   role: string;
+  tier?: string;
   image: string;
   position?: string;
   bio?: string;
-  linkedin: string;
+  linkedin?: string;
   index: number;
 };
 
-export function PersonCard({ name, role, image, position, bio, linkedin, index }: PersonCardProps) {
+export function PersonCard({ name, role, tier, image, position, bio, linkedin, index }: PersonCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const portrait = (
     <>
@@ -60,17 +61,22 @@ export function PersonCard({ name, role, image, position, bio, linkedin, index }
       <div className="person-meta">
         <h3>{name}</h3>
         <div className="person-meta-side">
-          <p>{role}</p>
-          <a
-            className="person-linkedin"
-            href={linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${name} on LinkedIn (opens in a new tab)`}
-            title={`${name} on LinkedIn`}
-          >
-            <span aria-hidden="true">in</span>
-          </a>
+          <div className="person-title">
+            {tier ? <span>{tier}</span> : null}
+            <p>{role}</p>
+          </div>
+          {linkedin ? (
+            <a
+              className="person-linkedin"
+              href={linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${name} on LinkedIn (opens in a new tab)`}
+              title={`${name} on LinkedIn`}
+            >
+              <span aria-hidden="true">in</span>
+            </a>
+          ) : null}
         </div>
       </div>
     </article>

@@ -70,6 +70,7 @@ export const founders = [
 export const executiveTeam = [
   {
     name: "Nathan Fanti",
+    tier: "Executive",
     role: "Chief of Staff",
     image:
       "https://static.wixstatic.com/media/7505c5_e72fd2ef4a4a4284a53846d6b01b9345~mv2.jpg/v1/fill/w_386,h_417,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/wix%20portfolio%20image_edited_edited.jpg",
@@ -77,26 +78,68 @@ export const executiveTeam = [
     linkedin: "https://www.linkedin.com/in/nathan-fanti/",
   },
   {
-    name: "Joshua Michell",
-    role: "Operations Lead",
-    image: "/images/team/josh.jpg",
-    position: "center 24%",
+    name: "Josh Michell",
+    tier: "Leadership",
+    role: "Lead - Ops",
+    image: "/images/team/josh-michell.webp",
+    position: "center 20%",
     linkedin: "https://www.linkedin.com/in/joshua-michell/",
   },
   {
-    name: "Daniel Watmough",
-    role: "Lead Analyst",
-    image: "/images/team/daniel.jpg",
-    position: "center 22%",
-    linkedin: "https://www.linkedin.com/in/daniel-watmough/",
-  },
-  {
     name: "Aneek Mukherjee",
-    role: "Community Lead",
+    tier: "Leadership",
+    role: "Lead - Com/Events",
     image:
       "https://static.wixstatic.com/media/7505c5_1d23e5d0c6dd4280a0df46a3ebdc50c2~mv2.png/v1/crop/x_567,y_196,w_3166,h_3419/fill/w_386,h_417,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/20260527-A7401998.png",
     position: "center 20%",
     linkedin: "https://www.linkedin.com/in/aneek-mukherjee-/",
+  },
+  {
+    name: "Sam Loucks",
+    tier: "Leadership",
+    role: "Lead - Partnerships",
+    image: "/images/team/sam-loucks.webp",
+    position: "center center",
+    linkedin: "https://www.linkedin.com/in/sam-loucks-6a606424a/",
+  },
+  {
+    name: "Seamus Galivan",
+    tier: "Leadership",
+    role: "Lead - Platform",
+    image: "/images/team/seamus-galivan.webp",
+    position: "center 24%",
+    linkedin: "https://www.linkedin.com/in/seamus-galivan/",
+  },
+  {
+    name: "Chris Xenos",
+    tier: "Associate",
+    role: "Legal / MSU Relations Exec",
+    image: "/images/team/chris-xenos.webp",
+    position: "center 22%",
+  },
+  {
+    name: "Rhian Ramos",
+    tier: "Associate",
+    role: "Content",
+    image: "/images/team/rhian-ramos.webp",
+    position: "center 26%",
+    linkedin: "https://www.linkedin.com/in/rhian-ramos-1a9534372/",
+  },
+  {
+    name: "Max Nieminen",
+    tier: "Associate",
+    role: "Finance and Sponsorships",
+    image: "/images/team/max-nieminen.webp",
+    position: "center 30%",
+    linkedin: "https://www.linkedin.com/in/maxnieminen/",
+  },
+  {
+    name: "Hamza Khokhawala",
+    tier: "Associate",
+    role: "Programming",
+    image: "/images/team/hamza-khokhawala.webp",
+    position: "center 28%",
+    linkedin: "https://www.linkedin.com/in/-hamzakhokhawala/",
   },
 ] as const;
 

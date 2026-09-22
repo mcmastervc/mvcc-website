@@ -67,18 +67,22 @@ test("renders the SEO-ready homepage", async () => {
   assert.doesNotMatch(html, /—/);
 });
 
-test("renders the executive-team page", async () => {
+test("renders the team page by tier", async () => {
   const response = await request("/team");
   assert.equal(response.status, 200);
   assertSecurityHeaders(response);
   const html = await response.text();
-  assert.match(html, /<title>Executive Team \| MVCC<\/title>/i);
+  assert.match(html, /<title>Team \| MVCC<\/title>/i);
   assert.match(html, /rel="canonical" href="https:\/\/mcmastervcc\.com\/team"/i);
   assert.match(html, /Nathan Fanti/i);
   assert.match(html, /Aneek Mukherjee/i);
+  assert.match(html, /Seamus Galivan/i);
+  assert.match(html, /Rhian Ramos/i);
+  assert.match(html, /Hamza Khokhawala/i);
   assert.match(html, /href="https:\/\/www\.linkedin\.com\/in\/nathan-fanti\/"/i);
-  assert.match(html, /src="\/images\/team\/josh\.jpg"/i);
-  assert.match(html, /src="\/images\/team\/daniel\.jpg"/i);
+  assert.match(html, /src="\/images\/team\/josh-michell\.webp"/i);
+  assert.match(html, /src="\/images\/team\/hamza-khokhawala\.webp"/i);
+  assert.doesNotMatch(html, /Daniel Watmough/i);
   assert.doesNotMatch(html, /Meet the founders\./i);
   assert.doesNotMatch(html, /Diya Shah/i);
   assertExternalLinksOpenInNewTabs(html);
