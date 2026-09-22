@@ -80,7 +80,7 @@ export const executiveTeam = [
   {
     name: "Josh Michell",
     tier: "Leadership",
-    role: "Lead - Ops",
+    role: "Director - Ops",
     image: "/images/team/josh-michell.webp",
     position: "center 20%",
     linkedin: "https://www.linkedin.com/in/joshua-michell/",
@@ -88,7 +88,7 @@ export const executiveTeam = [
   {
     name: "Aneek Mukherjee",
     tier: "Leadership",
-    role: "Lead - Com/Events",
+    role: "Director - Com/Events",
     image:
       "https://static.wixstatic.com/media/7505c5_1d23e5d0c6dd4280a0df46a3ebdc50c2~mv2.png/v1/crop/x_567,y_196,w_3166,h_3419/fill/w_386,h_417,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/20260527-A7401998.png",
     position: "center 20%",
@@ -97,7 +97,7 @@ export const executiveTeam = [
   {
     name: "Sam Loucks",
     tier: "Leadership",
-    role: "Lead - Partnerships",
+    role: "Director - Partnerships",
     image: "/images/team/sam-loucks.webp",
     position: "center center",
     linkedin: "https://www.linkedin.com/in/sam-loucks-6a606424a/",
@@ -105,7 +105,7 @@ export const executiveTeam = [
   {
     name: "Seamus Galivan",
     tier: "Leadership",
-    role: "Lead - Platform",
+    role: "Director - Platform",
     image: "/images/team/seamus-galivan.webp",
     position: "center 24%",
     linkedin: "https://www.linkedin.com/in/seamus-galivan/",
@@ -113,7 +113,7 @@ export const executiveTeam = [
   {
     name: "Chris Xenos",
     tier: "Associate",
-    role: "Legal / MSU Relations Exec",
+    role: "Campus Relations",
     image: "/images/team/chris-xenos.webp",
     position: "center 22%",
     linkedin: "https://www.linkedin.com/in/christopherxenos/",
