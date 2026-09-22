@@ -5,7 +5,6 @@ import { useState } from "react";
 type PersonCardProps = {
   name: string;
   role: string;
-  tier?: string;
   image: string;
   position?: string;
   bio?: string;
@@ -13,7 +12,7 @@ type PersonCardProps = {
   index: number;
 };
 
-export function PersonCard({ name, role, tier, image, position, bio, linkedin, index }: PersonCardProps) {
+export function PersonCard({ name, role, image, position, bio, linkedin, index }: PersonCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
   const portrait = (
     <>
@@ -62,7 +61,6 @@ export function PersonCard({ name, role, tier, image, position, bio, linkedin, i
         <h3>{name}</h3>
         <div className="person-meta-side">
           <div className="person-title">
-            {tier ? <span>{tier}</span> : null}
             <p>{role}</p>
           </div>
           {linkedin ? (
