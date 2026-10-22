@@ -77,7 +77,8 @@ test("renders the team page by tier", async () => {
   assert.match(html, /<title>Team \| MVCC<\/title>/i);
   assert.match(html, /rel="canonical" href="https:\/\/mcmastervcc\.com\/team"/i);
   assert.match(html, /Nathan Fanti/i);
-  assert.match(html, /COO \(Chief Operating Officer\)/i);
+  assert.match(html, /Chief Operating Officer/i);
+  assert.doesNotMatch(html, /COO \(Chief Operating Officer\)/i);
   assert.match(html, /Aneek Mukherjee/i);
   assert.match(html, /Seamus Galivan/i);
   assert.match(html, /Rhian Ramos/i);

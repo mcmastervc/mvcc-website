@@ -71,7 +71,7 @@ export const executiveTeam = [
   {
     name: "Nathan Fanti",
     tier: "Executive",
-    role: "COO (Chief Operating Officer)",
+    role: "Chief Operating Officer",
     image:
       "https://static.wixstatic.com/media/7505c5_e72fd2ef4a4a4284a53846d6b01b9345~mv2.jpg/v1/fill/w_386,h_417,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/wix%20portfolio%20image_edited_edited.jpg",
     position: "center 22%",
