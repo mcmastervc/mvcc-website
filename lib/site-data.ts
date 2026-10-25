@@ -57,14 +57,6 @@ export const founders = [
     linkedin: "https://www.linkedin.com/in/buhart/",
     bio: "Benicio is a third-year Statistics student at McMaster. He's worked in data and ai automation at Finni Health (YC W23), and risk modelling at at Kensa Logistics. He co-founded MVCC because he believes McMaster should be a name people know in VC. He built the club to get it there.",
   },
-  {
-    name: "Veer Sarin",
-    role: "Co-Founder",
-    image: "/images/team/veer.jpg",
-    position: "center center",
-    linkedin: "https://www.linkedin.com/in/veersarin/",
-    bio: "Veer Sarin is a co-founder of MVCC, where he led external relations and partnerships - forming ties with mega-funds, high-growth startups, and alumni that helped grow the club to over 850 members. He serves a venture scount for a number of firms across North America, sat on the investment committee for the McMaster Student Seed Fund, and interned at an M&&A advisory firm. Veer has since transferred to Ivey's HBA program, where he continues to advise MVCC while serving as Founding GTM for Visceral AI, an early-stage AI inference optimization startup.",
-  },
 ] as const;
 
 export const executiveTeam = [

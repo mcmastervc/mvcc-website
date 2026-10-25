@@ -6,7 +6,6 @@ Recommended filenames:
 
 - `diya-shah.webp`
 - `benicio-uhart.webp`
-- `veer-sarin.webp`
 - `nathan-fanti.webp`
 - `joshua-michell.webp`
 - `daniel-watmough.webp`
